@@ -49,7 +49,6 @@ public class Board {
 //        return slots[i][j];
 //    }
 
-
     public char getWinner() {
         return winner;
     }
