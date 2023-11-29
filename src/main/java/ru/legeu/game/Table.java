@@ -12,28 +12,11 @@ public class Table {
             boards.add(new Board());
     }
 
-    public List<Board> getBoards() {
-        return boards;
+    public Board getBoard(int index) {
+        return boards.get(index);
     }
 
-    @Override
-    public String toString() {
-        String string = "";
-        int index = 0;
-
-
-        for (int i = 0; i < 3; i++) {
-            string += "\n";
-            for (int j = 0; j < 3; j++) {
-
-                string += "\n";
-                for (int k = 0; k < 3; k++) {
-                    string += boards.get(index).getLine(k);
-                }
-                index++;
-            }
-        }
-
-        return string;
+    public List<Board> getBoards() {
+        return boards;
     }
 }

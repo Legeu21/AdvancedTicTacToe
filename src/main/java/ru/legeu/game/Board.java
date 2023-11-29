@@ -1,5 +1,8 @@
 package ru.legeu.game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Board {
     private final char[][] slots;
     private char winner;
@@ -40,7 +43,14 @@ public class Board {
     }
 
     public String getLine(int line) {
-        return slots[line][0] + " " + slots[line][1] + " " + slots[line][2] + " | ";
+        return slots[line][0] + "" + slots[line][1] + slots[line][2];
+    }
+
+    public List<String> getLines() {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 3; i++)
+            list.add(getLine(i));
+        return list;
     }
 
 //    public char getCharBySlot(int slot) {
@@ -61,15 +71,11 @@ public class Board {
         return slots;
     }
 
-//    @Override
-//    public String toString() {
-//        StringBuilder chars = new StringBuilder();
-//        for (int i = 0; i < 3; i++) {
-//            chars.append("\n");
-//            for (int j = 0; j < 3; j++)
-//                chars.append(slots[i][j]).append(" ");
-//        }
-//
-//        return chars + "";
-//    }
+    @Override
+    public String toString() {
+        var string = new StringBuilder();
+        for (String line : getLines())
+            string.append(line).append("\n");
+        return string.toString();
+    }
 }
