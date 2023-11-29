@@ -21,13 +21,18 @@ public class Table {
         String string = "";
         int index = 0;
 
+
         for (int i = 0; i < 3; i++) {
+            string += "\n";
             for (int j = 0; j < 3; j++) {
-                string += boards.get(index);
+
+                string += "\n";
+                for (int k = 0; k < 3; k++) {
+                    string += boards.get(index).getLine(k);
+                }
                 index++;
             }
         }
-//        String board = boards.stream().map(Board::toString).collect(Collectors.joining());
 
         return string;
     }

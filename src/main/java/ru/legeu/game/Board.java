@@ -39,6 +39,10 @@ public class Board {
                 && slots[1][1] == symbol;
     }
 
+    public String getLine(int line) {
+        return slots[line][0] + " " + slots[line][1] + " " + slots[line][2] + " | ";
+    }
+
 //    public char getCharBySlot(int slot) {
 //        int i = 0;
 //        if (slot >= 2 && slot < 5) i = 1;
@@ -57,15 +61,15 @@ public class Board {
         return slots;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder chars = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            chars.append("\n");
-            for (int j = 0; j < 3; j++)
-                chars.append(slots[i][j]).append(" ");
-        }
-
-        return chars + "";
-    }
+//    @Override
+//    public String toString() {
+//        StringBuilder chars = new StringBuilder();
+//        for (int i = 0; i < 3; i++) {
+//            chars.append("\n");
+//            for (int j = 0; j < 3; j++)
+//                chars.append(slots[i][j]).append(" ");
+//        }
+//
+//        return chars + "";
+//    }
 }
