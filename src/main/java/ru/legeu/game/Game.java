@@ -21,6 +21,11 @@ public class Game {
         players.clear();
     }
 
+    public Player getPlayerBySymbol(char symbol) {
+        return players.stream().filter(player -> player.getSymbol() == symbol)
+                .findFirst().orElse(null);
+    }
+
     public Collection<Player> getPlayers() {
         return players;
     }
